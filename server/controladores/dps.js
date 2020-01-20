@@ -8,12 +8,12 @@ var dirPin = new Gpio(20, 'out');
 var EnPin= new Gpio(21, 'out'); 
 
 
-var Arriba = new Gpio(5, 'in', 'rising', {debounceTimeout: 300});
-var Abajo = new Gpio(6, 'in', 'rising', {debounceTimeout: 300});
-var FC0 = new Gpio(12, 'in', 'rising', {debounceTimeout: 300});
-var FC1 = new Gpio(26, 'in', 'rising', {debounceTimeout: 300});
-var FC2 = new Gpio(19, 'in', 'rising', {debounceTimeout: 300});
-var FC3 = new Gpio(13, 'in', 'rising', {debounceTimeout: 300});
+var Arriba = new Gpio(5, 'in', 'falling', {debounceTimeout: 300});
+var Abajo = new Gpio(6, 'in', 'falling', {debounceTimeout: 300});
+var FC0 = new Gpio(12, 'in', 'falling', {debounceTimeout: 300});
+var FC1 = new Gpio(26, 'in', 'falling', {debounceTimeout: 300});
+var FC2 = new Gpio(19, 'in', 'falling', {debounceTimeout: 300});
+var FC3 = new Gpio(13, 'in', 'falling', {debounceTimeout: 300});
 
 var IO;
 
