@@ -137,7 +137,7 @@ Arriba.watch(function (err, value) {
     console.log('FC2'); 
     IO.emit("messages","nivel3");
     clearInterval(ivAbajo);
-    clearInterval(ivAr3iba);
+    clearInterval(ivArriba);
     LED1.writeSync(0);
     LED2.writeSync(0);
     LED3.writeSync(1);
