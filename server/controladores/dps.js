@@ -3,9 +3,9 @@ var LED1 = new Gpio(23, 'out');
 var LED2 = new Gpio(24, 'out'); 
 var LED3 = new Gpio(25, 'out'); 
 
-var stepPin = new Gpio(16, 'out'); 
-var dirPin = new Gpio(20, 'out'); 
-var EnPin= new Gpio(21, 'out'); 
+var stepPin = new Gpio(17, 'out'); 
+var dirPin = new Gpio(27, 'out'); 
+var EnPin= new Gpio(22, 'out'); 
 
 
 var Arriba = new Gpio(5, 'in', 'both');
