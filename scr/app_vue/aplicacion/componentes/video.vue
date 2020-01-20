@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div  class="container">
+  <div  class="container-fluid">
         <div class="row">
           <div class="col-lg-12 col-sm-12 col-md-12 col-sm-12 col-xl-12">
             <video id="video" :src="direccionVideo" autoplay controls></video>
@@ -51,9 +51,10 @@ video {
   display: block;       /* iframes are inline by default */
   background: #000;
   border: none;         /* Reset default border */
-  height: 90vh;        /* Viewport-relative units */
-  width: 90vw;
+  height: 100vh;        /* Viewport-relative units */
+  width: 100vw;
 }
+
 
 .container{
   background-color: #000;
