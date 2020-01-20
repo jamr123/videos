@@ -32,7 +32,7 @@ export default {
     
 this.socket.on('messages', function(data) {
 
-      console.log(data.value);
+      console.log(data);
      
 
     if (data.value== "nivel0") {
