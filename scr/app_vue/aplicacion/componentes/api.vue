@@ -20,7 +20,7 @@ export default {
         inicio:false
       },
       socket:io.connect('http://192.168.1.78:3333', { 'forceNew': true }),
-      rutaVideo:"/videos/video0.mp4"
+      rutaVideo:"/videos/v1_atocha_sub"
     };
   },
   computed: {},
