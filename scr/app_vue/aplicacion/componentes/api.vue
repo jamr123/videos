@@ -20,7 +20,7 @@ export default {
         inicio:false
       },
       socket:io.connect('http://192.168.1.78:3333', { 'forceNew': true }),
-      rutaVideo:"/videos/v1_atocha_sub.mp4"
+      rutaVideo:"/videos/v1_atocha_sub_low.mp4"
     };
   },
   computed: {},
@@ -36,24 +36,24 @@ this.socket.on('messages', function(data) {
      
 
     if (data== "nivel0") {
-      this.rutaVideo = "/videos/v1_atocha_sub.mp4";
+      this.rutaVideo = "/videos/v1_atocha_sub_low.mp4";
     }
 
     if (data == "nivel1") {
       
-      this.rutaVideo = "/videos/v2_atocha_sub.mp4";
+      this.rutaVideo = "/videos/v2_atocha_sub_low.mp4";
      
     }
 
     if (data == "nivel2") {
       
-      this.rutaVideo = "/videos/v3_atocha_sub.mp4";
+      this.rutaVideo = "/videos/v3_atocha_sub_low.mp4";
      
     }
 
     if (data == "nivel3") {
       
-      this.rutaVideo ="/videos/v4_atocha_sub.mp4";
+      this.rutaVideo ="/videos/v4_atocha_sub_low.mp4";
      
     }
 
