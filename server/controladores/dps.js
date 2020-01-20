@@ -90,7 +90,7 @@ Arriba.watch(function (err, value) {
     IO.emit("messages","nivel0");
     clearInterval(ivAbajo);
     clearInterval(ivArriba);
-
+    stepPin.writeSync(0);
     LED1.writeSync(0);
     LED2.writeSync(0);
     LED3.writeSync(0);
@@ -110,6 +110,7 @@ Arriba.watch(function (err, value) {
     IO.emit("messages","nivel1");
     clearInterval(ivAbajo);
     clearInterval(ivArriba);
+    stepPin.writeSync(0);
     LED1.writeSync(1);
     LED2.writeSync(0);
     LED3.writeSync(0);
@@ -129,6 +130,7 @@ Arriba.watch(function (err, value) {
     IO.emit("messages","nivel2");
     clearInterval(ivAbajo);
     clearInterval(ivArriba);
+    stepPin.writeSync(0);
     LED1.writeSync(0);
     LED2.writeSync(1);
     LED3.writeSync(0);
@@ -146,6 +148,7 @@ Arriba.watch(function (err, value) {
     if(value==0){
     console.log('FC2'); 
     IO.emit("messages","nivel3");
+    stepPin.writeSync(0);
     clearInterval(ivAbajo);
     clearInterval(ivArriba);
     LED1.writeSync(0);
