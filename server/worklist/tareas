@@ -1,0 +1,40 @@
+ myGsm.println("AT+CIPSHUT\r"); //RESPONSE= OK
+  delay(1000);
+  myGsm.println("AT+CIPMUX=0\r"); //RESPONSE= OK
+  delay(2000);
+  myGsm.println("AT+CGATT=1\r"); //RESPONSE= OK
+  delay(1000);
+  myGsm.println("AT+CSTT=\"internet\",\"\",\"\"\r"); //RESPONSE= OK
+  delay(5000);
+  myGsm.println("AT+CIICR\r"); //RESPONSE= OK
+  delay(5000);
+  myGsm.println("AT+CIFSR\r"); //RESPONSE= Returns an IP
+  delay(2000);
+  myGsm.println("AT+CIPSTART=\"TCP\",\"159.203.180.107\", 80\r") //RESPONSE= CONNECTED OK
+  delay(3000);
+  myGsm.println("AT+CIPSEND\r"); //RESPONSE= >
+  delay(500);
+  myGsm.println("POST http://159.203.180.107/Code/ HTTP/1.1");
+  delay(500);
+  myGsm.println("Host: 159.203.180.107");
+  delay(500);
+  myGsm.println("Content-Type: application/json");
+  delay(500);
+  myGsm.println("Content-Length: 25\r\n");
+  delay(500);
+  myGsm.println("{\"Celsius\":\"TEMPERATURE\"}");
+  delay(500);
+  myGsm.write(0x1A); // Ctrl Z
+  delay(10000);
+  /*
+    After sending all these instructions, I get the following response,
+    OK
+    HTTP/1.1 200 OK
+    Friday December, 22
+    +TCPCLOSE=0
+    OK
+  */
+  myGsm.println("AT+CIPCLOSE"); //RESPONSE= OK
+  delay(1000);
+  myGsm.println("AT+CIPSHUT"); //RESPONSE= OK
+  delay(1000);

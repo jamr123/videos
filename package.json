@@ -1,0 +1,45 @@
+{
+  "name": "videos",
+  "version": "1.0.0",
+  "description": "aplicacion ",
+  "main": "main.js",
+  "scripts": {
+    "ww": "webpack -w",
+    "build": "webpack",
+    "start": "nodemon server/main.js"
+  },
+  "keywords": [],
+  "author": "Jorge Alberto Meza Rodriguez",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "bcrypt-nodejs": "0.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.2",
+    "jwt-simple": "^0.5.5",
+    "jwt-simple-error-identify": "^1.0.5",
+    "moment": "^2.20.1",
+    "mongoose": "^5.4.1",
+    "nodemailer": "^5.0.0",
+    "saslprep": "^1.0.3",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "css-loader": "^2.1.1",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.13.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "vue": "^2.5.13",
+    "vue-axios": "^2.0.2",
+    "vue-loader": "^13.6.1",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.13",
+    "vuex": "^3.0.1",
+    "webpack": "^3.10.0"
+  }
+}

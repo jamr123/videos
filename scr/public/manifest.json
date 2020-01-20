@@ -1,0 +1,21 @@
+   {
+    "name": "jamrelctronics Agua",
+    "short_name": "Agua",
+    "icons": [
+      {
+        "src": "https://i.ibb.co/G3vVtHX/logo.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "https://i.ibb.co/G3vVtHX/logo.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#00F",
+    "theme_color": "#00F",
+    "description": "jamrelctronics app Agua"
+  }
