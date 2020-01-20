@@ -51,8 +51,8 @@ video {
   display: block;       /* iframes are inline by default */
   background: #000;
   border: none;         /* Reset default border */
-  height: 100vh;        /* Viewport-relative units */
-  width: 100vw;
+  height: 98vh;        /* Viewport-relative units */
+  width: 98vw;
 }
 
 
