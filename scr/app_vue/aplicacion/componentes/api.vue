@@ -35,23 +35,23 @@ this.socket.on('messages', function(data) {
       console.log(data);
      
 
-    if (data.value== "nivel0") {
+    if (data== "nivel0") {
       this.rutaVideo = "/videos/v1_atocha_sub";
     }
 
-    if (data.value == "nivel1") {
+    if (data == "nivel1") {
       
       this.rutaVideo = "/videos/v2_atocha_sub";
      
     }
 
-    if (data.value == "nivel2") {
+    if (data == "nivel2") {
       
       this.rutaVideo = "/videos/v3_atocha_sub";
      
     }
 
-    if (data.value == "nivel3") {
+    if (data == "nivel3") {
       
       this.rutaVideo ="/videos/v4_atocha_sub";
      
