@@ -52,7 +52,7 @@ Arriba.watch(function (err, value) {
         flagivArriba==true;
         dirPin.writeSync(1);
         ivArriba= setInterval(_ => stepPin.writeSync(stepPin.readSync() ^ 1), 1);
-        console.error('buscando Arriba'); 
+        console.log('buscando Arriba'); 
         IO.emit("messages","buscando Arriba");
     }
 
@@ -71,7 +71,7 @@ Arriba.watch(function (err, value) {
         flagivAbajo==true;
         dirPin.writeSync(0);
         ivAbajo = setInterval(_ => stepPin.writeSync(stepPin.readSync() ^ 1), 1);
-        console.error('buscando Abajo'); 
+        console.log('buscando Abajo'); 
         IO.emit("messages","buscando Abajo");
          
    
@@ -84,7 +84,7 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    console.error('FC0'); 
+    console.log('FC0'); 
     IO.emit("messages","nivel0");
     clearInterval(ivAbajo);
     clearInterval(ivArriba);
@@ -102,7 +102,7 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    console.error('FC1'); 
+    console.log('FC1'); 
     IO.emit("messages","nivel1");
     clearInterval(ivAbajo);
     clearInterval(ivArriba);
@@ -118,7 +118,7 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    console.error('FC2'); 
+    console.log('FC2'); 
     IO.emit("messages","nivel2");
     clearInterval(ivAbajo);
     clearInterval(ivArriba);
@@ -134,7 +134,7 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    console.error('FC2'); 
+    console.log('FC2'); 
     IO.emit("messages","nivel3");
     clearInterval(ivAbajo);
     clearInterval(ivAr3iba);
