@@ -61,7 +61,7 @@ Arriba.watch(function (err, value) {
 
   if (value == 0 && flagAction == false) {
     flagAction = true;
-    flagAbajo = true;
+    flagArriba = true;
     serialPort.write("1\r\n");
     console.log('buscando Arriba');
     IO.emit("messages", "buscando Arriba");
