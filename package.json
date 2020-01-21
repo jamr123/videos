@@ -13,14 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.17.1",
-    "bcrypt-nodejs": "0.0.3",
     "cors": "^2.8.5",
     "express": "^4.16.2",
-    "jwt-simple": "^0.5.5",
-    "jwt-simple-error-identify": "^1.0.5",
-    "moment": "^2.20.1",
-    "mongoose": "^5.4.1",
-    "nodemailer": "^5.0.0",
+    
     "saslprep": "^1.0.3",
     "socket.io": "^2.0.4"
   },
