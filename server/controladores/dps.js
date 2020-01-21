@@ -28,8 +28,9 @@ var FC3 = new Gpio(13, 'in', 'both');
 
 var IO;
 
-var flagivArriba=false;
-var flagivAbajo=false;
+var flagAction=false;
+var flagAbajo=false;
+var flagArriba=false;
 
 
 function socketSend(io){
@@ -43,7 +44,7 @@ function socketSend(io){
 
 function initAbajo (){
 
-    flagivAbajo==true;
+    flagAction==true;
     dirPin.writeSync(0);
     serialPort.write("2\r\n");
     console.error('buscando Abajo'); 
@@ -58,7 +59,7 @@ Arriba.watch(function (err, value) {
     return;
     }
 
-    if(value==0 && flagivArriba==false){
+    if(value==0 && flagAction==false){
      
         flagivArriba==true;
         serialPort.write("1\r\n", function(err, results) {
@@ -79,7 +80,7 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    if(value==0 && flagivAbajo==false){
+    if(value==0 && flagAction==false){
      
         flagivAbajo==true;
         serialPort.write("2\r\n");
@@ -96,9 +97,10 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    if(value==0){
-
-      console.log('FC0'); 
+    if(value==0 && flagAction==true && flagArriba==false){
+    flagAction=false;
+    flagAbajo=false;
+    console.log('FC0'); 
     IO.emit("messages","nivel0");
 
     serialPort.write("3\r\n");
@@ -107,8 +109,6 @@ Arriba.watch(function (err, value) {
     LED2.writeSync(0);
     LED3.writeSync(0);
 
-    flagivArriba=false;
-    flagivAbajo=false;
     }
   });
 
@@ -117,15 +117,15 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    if(value==0){
+    if(value==0 && flagAction==true && flagAbajo==false){
+      flagAction=false;
+      flagArriba=false;
     console.log('FC1'); 
     IO.emit("messages","nivel1");
     serialPort.write("3\r\n");
     LED1.writeSync(1);
     LED2.writeSync(0);
     LED3.writeSync(0);
-    flagivArriba=false;
-    flagivAbajo=false;
 
     }
   });
@@ -135,15 +135,15 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    if(value==0){
+    if(value==0 && flagAction==true && flagAbajo==false){
+      flagAction=false;
+      flagArriba=false;
     console.log('FC2'); 
     IO.emit("messages","nivel2");
     serialPort.write("3\r\n");
     LED1.writeSync(0);
     LED2.writeSync(1);
     LED3.writeSync(0);
-    flagivArriba=false;
-    flagivAbajo=false;
 
     }
   });
@@ -153,7 +153,9 @@ Arriba.watch(function (err, value) {
       console.error('There was an error', err); 
     return;
     }
-    if(value==0){
+    if(value==0 && flagAction==true && flagAbajo==false){
+    flagAction=false;
+    flagArriba=false;
     console.log('FC2'); 
     IO.emit("messages","nivel3");
     serialPort.write("3\r\n", function(err, results) {
@@ -163,8 +165,6 @@ Arriba.watch(function (err, value) {
     LED1.writeSync(0);
     LED2.writeSync(0);
     LED3.writeSync(1);
-    flagivArriba=false;
-    flagivAbajo=false;
     }
   });
 
