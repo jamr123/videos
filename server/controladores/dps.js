@@ -1,9 +1,11 @@
-var serialport = require("serialport"); 
-var SerialPort = serialport.SerialPort; 
+const SerialPort = require('serialport')
+const Readline = require('@serialport/parser-readline')
+const serialPort = new SerialPort(path, { baudRate: 9600 })
 
-var serialPort = new SerialPort("/dev/ttyUSB0", {
-  baudrate: 9600,
-});
+const parser = new Readline()
+serialPort.pipe(parser)
+
+parser.on('data', line => console.log(`> ${line}`))
 
 
 
@@ -26,10 +28,9 @@ var FC3 = new Gpio(13, 'in', 'both');
 
 var IO;
 
-var ivArriba = setInterval(_ => stepPin.writeSync(stepPin.readSync() ^ 1), 1);
-var ivAbajo = setInterval(_ => stepPin.writeSync(stepPin.readSync() ^ 1), 1);
 var flagivArriba=false;
 var flagivAbajo=false;
+
 
 function socketSend(io){
 
@@ -41,7 +42,7 @@ function socketSend(io){
 }
 
 function initAbajo (){
-  
+
     flagivAbajo==true;
     dirPin.writeSync(0);
     serialPort.write("2\n", function(err, results) {
