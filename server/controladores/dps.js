@@ -45,10 +45,7 @@ function initAbajo (){
 
     flagivAbajo==true;
     dirPin.writeSync(0);
-    serialPort.write("2\n", function(err, results) {
-      console.log("err: " + err);
-      console.log("results: " + results);
-    }); 
+    serialPort.write("2\r\n");
     console.error('buscando Abajo'); 
     IO.emit("messages","buscando Abajo");
 
@@ -64,7 +61,7 @@ Arriba.watch(function (err, value) {
     if(value==0 && flagivArriba==false){
      
         flagivArriba==true;
-        serialPort.write("2\n", function(err, results) {
+        serialPort.write("1\r\n", function(err, results) {
           console.log("err: " + err);
           console.log("results: " + results);
         });
@@ -85,10 +82,7 @@ Arriba.watch(function (err, value) {
     if(value==0 && flagivAbajo==false){
      
         flagivAbajo==true;
-        serialPort.write("1\n", function(err, results) {
-          console.log("err: " + err);
-          console.log("results: " + results);
-        });
+        serialPort.write("2\r\n");
         console.log('buscando Abajo'); 
         IO.emit("messages","buscando Abajo");
          
@@ -107,10 +101,7 @@ Arriba.watch(function (err, value) {
       console.log('FC0'); 
     IO.emit("messages","nivel0");
 
-    serialPort.write("3\n", function(err, results) {
-      console.log("err: " + err);
-      console.log("results: " + results);
-    });
+    serialPort.write("3\r\n");
 
     LED1.writeSync(0);
     LED2.writeSync(0);
@@ -129,10 +120,7 @@ Arriba.watch(function (err, value) {
     if(value==0){
     console.log('FC1'); 
     IO.emit("messages","nivel1");
-    serialPort.write("3\n", function(err, results) {
-      console.log("err: " + err);
-      console.log("results: " + results);
-    });
+    serialPort.write("3\r\n");
     LED1.writeSync(1);
     LED2.writeSync(0);
     LED3.writeSync(0);
@@ -150,10 +138,7 @@ Arriba.watch(function (err, value) {
     if(value==0){
     console.log('FC2'); 
     IO.emit("messages","nivel2");
-    serialPort.write("3\n", function(err, results) {
-      console.log("err: " + err);
-      console.log("results: " + results);
-    });
+    serialPort.write("3\r\n");
     LED1.writeSync(0);
     LED2.writeSync(1);
     LED3.writeSync(0);
@@ -171,7 +156,7 @@ Arriba.watch(function (err, value) {
     if(value==0){
     console.log('FC2'); 
     IO.emit("messages","nivel3");
-    serialPort.write("3\n", function(err, results) {
+    serialPort.write("3\r\n", function(err, results) {
       console.log("err: " + err);
       console.log("results: " + results);
     });
