@@ -27,12 +27,12 @@ void loop() {
 
     if(option=='2'){
     Serial.println("abajo");
-    digitalWrite(dirPin, LOW);
+    digitalWrite(dirPin, HIGH);
     val=2;
     }
     if(option=='1'){
     Serial.println("arriba");
-    digitalWrite(dirPin, HIGH);
+    digitalWrite(dirPin, LOW);
     val=1;
     }
     
